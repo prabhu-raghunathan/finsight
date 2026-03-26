@@ -1,0 +1,10 @@
+services:
+  user-db:
+    image: postgres:15
+    container_name: user-db
+    environment:
+      POSTGRES_DB: userdb
+      POSTGRES_USER: finsight
+      POSTGRES_PASSWORD: finsight123
+    ports:
+      - "5432:5432"
