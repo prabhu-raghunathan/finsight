@@ -1,0 +1,18 @@
+# Maven
+**/target/
+**/.mvn/
+**/mvnw
+**/mvnw.cmd
+
+# IntelliJ
+**/.idea/
+**/*.iml
+**/*.iws
+
+# Environment & Secrets
+**/application-local.properties
+**/.env
+
+# OS
+.DS_Store
+Thumbs.db
