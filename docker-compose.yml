@@ -8,6 +8,8 @@ services:
       POSTGRES_PASSWORD: finsight123
     ports:
       - "5432:5432"
+    networks:
+      - finsight-network
 
   transaction-db:
     image: postgres:15
@@ -18,5 +20,27 @@ services:
       POSTGRES_PASSWORD: finsight123
     ports:
       - "5434:5432"
+    networks:
+      - finsight-network
 
+  ai-insights-service:
+    build:
+      context: ./ai-insights-service
+      dockerfile: Dockerfile
+    container_name: ai-insights-service
+    ports:
+      - "8083:8083"
+    environment:
+      JWT_SECRET: password-for-finserve-try-that-hacker
+      TRANSACTION_SERVICE_URL: http://172.17.0.1:8082
+      OLLAMA_BASE_URL: http://172.17.0.1:11434
+      OLLAMA_MODEL: llama3.2
+    depends_on:
+      - user-db
+      - transaction-db
+    networks:
+      - finsight-network
 
+networks:
+  finsight-network:
+    driver: bridge
