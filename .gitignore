@@ -1,18 +1,24 @@
-# Maven
+# Maven build output
 **/target/
-**/.mvn/
+**/.mvn/wrapper/maven-wrapper.jar
 **/mvnw
 **/mvnw.cmd
 
-# IntelliJ
+# IntelliJ IDEA
 **/.idea/
 **/*.iml
 **/*.iws
+**/*.ipr
+**/out/
+
+# Spring Boot
+**/application-local.properties
+**/*.log
 
 # Environment & Secrets
-**/application-local.properties
 **/.env
 
 # OS
 .DS_Store
 Thumbs.db
+**/HELP.md

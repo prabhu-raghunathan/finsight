@@ -1,6 +1,7 @@
 package com.finsight.user_service.service;
 
 import com.finsight.user_service.dto.AuthResponse;
+import com.finsight.user_service.dto.LoginRequest;
 import com.finsight.user_service.dto.RegisterRequest;
 import com.finsight.user_service.entity.User;
 import com.finsight.user_service.repository.UserRepository;
@@ -34,7 +35,7 @@ public class UserService {
         return new AuthResponse(token, user.getEmail(), user.getName());
     }
 
-    public AuthResponse login(RegisterRequest request) {
+    public AuthResponse login(LoginRequest request) {
         User user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 

@@ -47,6 +47,7 @@ public class JwtUtil {
                     .parseClaimsJws(token);
             return true;
         } catch (JwtException e) {
+            System.out.println("JWT validation failed: " + e.getMessage());
             return false;
         }
     }

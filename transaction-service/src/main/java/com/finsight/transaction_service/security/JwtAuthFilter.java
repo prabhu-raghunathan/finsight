@@ -25,7 +25,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                                     HttpServletResponse response,
                                     FilterChain filterChain)
             throws ServletException, IOException {
-
+        System.out.println("JWT Filter running - Auth header: " + request.getHeader("Authorization"));
         // 1. Extract the Authorization header
         String authHeader = request.getHeader("Authorization");
 
@@ -41,18 +41,17 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         // 4. Validate token and set authentication
         if (jwtUtil.isTokenValid(token)) {
             String email = jwtUtil.extractEmail(token);
-
             UsernamePasswordAuthenticationToken authToken =
                     new UsernamePasswordAuthenticationToken(
                             email, null, List.of()
                     );
-
             authToken.setDetails(
                     new WebAuthenticationDetailsSource().buildDetails(request)
             );
-
-            // 5. Tell Spring Security this request is authenticated
             SecurityContextHolder.getContext().setAuthentication(authToken);
+            System.out.println("Authentication set for: " + email);
+        } else {
+            System.out.println("Token is INVALID - rejected by JwtUtil");
         }
 
         // 6. Continue the filter chain

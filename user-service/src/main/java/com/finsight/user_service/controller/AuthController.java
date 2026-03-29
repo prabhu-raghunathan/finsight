@@ -1,6 +1,7 @@
 package com.finsight.user_service.controller;
 
 import com.finsight.user_service.dto.AuthResponse;
+import com.finsight.user_service.dto.LoginRequest;
 import com.finsight.user_service.dto.RegisterRequest;
 import com.finsight.user_service.service.UserService;
 import jakarta.validation.Valid;
@@ -21,7 +22,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<AuthResponse> login(@Valid @RequestBody RegisterRequest request) {
+    public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest request) {
         return ResponseEntity.ok(userService.login(request));
     }
 }

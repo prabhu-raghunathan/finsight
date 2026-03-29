@@ -113,5 +113,9 @@
     </orderEntry>
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:11.0.20" level="project" />
     <orderEntry type="library" name="Maven: io.jsonwebtoken:jjwt-api:0.11.5" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:3.2.5" level="project" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.32" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:10.1.20" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.validation:jakarta.validation-api:3.0.2" level="project" />
   </component>
 </module>
