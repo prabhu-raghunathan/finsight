@@ -4,6 +4,18 @@ from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from typing import List, Dict, Any
 from dotenv import load_dotenv
+import asyncio
+from functools import partial
+
+async def get_insight(transactions: List[Dict[str, Any]], question: str) -> str:
+    context = format_transactions(transactions)
+    chain = build_chain()
+    loop = asyncio.get_event_loop()
+    result = await loop.run_in_executor(None, partial(chain.invoke, {
+        "transactions": context,
+        "question": question
+    }))
+    return result
 
 load_dotenv()
 
@@ -51,12 +63,3 @@ Answer:"""
     )
 
     return prompt | llm | StrOutputParser()
-
-
-async def get_insight(transactions: List[Dict[str, Any]], question: str) -> str:
-    context = format_transactions(transactions)
-    chain = build_chain()
-    return chain.invoke({
-        "transactions": context,
-        "question": question
-    })

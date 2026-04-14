@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinSight — Sign In</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="login-wrap">
+  <div class="login-box fade-in">
+    <div class="login-logo">FinSight</div>
+    <p class="login-sub">Personal finance intelligence</p>
+
+    <div class="login-card">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" autocomplete="email" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" />
+      </div>
+
+      <button class="btn" id="loginBtn" style="width:100%; justify-content:center; margin-top:0.5rem;">
+        Sign In
+      </button>
+
+      <div class="msg error" id="errorMsg"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

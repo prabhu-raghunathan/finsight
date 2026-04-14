@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinSight — AI Chat</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav>
+  <span class="brand">FinSight</span>
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="transaction.html">Add Transaction</a>
+    <a href="ai-chat.html">AI Chat</a>
+    <a href="#" id="logoutBtn">Logout</a>
+  </div>
+</nav>
+
+<div class="chat-wrap">
+  <div class="chat-body" id="chatBody">
+    <div class="chat-hint" id="chatHint">
+      <p>Ask anything about your finances.</p>
+      <div class="suggestions">
+        <button class="suggestion">Which month was my worst financially?</button>
+        <button class="suggestion">What did I spend most on?</button>
+        <button class="suggestion">What's my income vs expense ratio?</button>
+        <button class="suggestion">How can I save more money?</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-bottom">
+    <div class="chat-input-row">
+      <input
+              type="text"
+              id="questionInput"
+              placeholder="Ask about your finances..."
+              autocomplete="off"
+      />
+      <button class="btn" id="sendBtn">Ask</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ai-chat.js"></script>
+</body>
+</html>

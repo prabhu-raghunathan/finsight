@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinSight — Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav>
+  <span class="brand">FinSight</span>
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="transaction.html">Add Transaction</a>
+    <a href="ai-chat.html">AI Chat</a>
+    <a href="#" id="logoutBtn">Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="page-header">
+    <h1>Dashboard</h1>
+    <p id="subheading">Loading your transactions...</p>
+  </div>
+
+  <!-- Summary Cards -->
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="label">Total Income</div>
+      <div class="value" id="totalIncome" style="color: var(--income);">—</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">Total Expenses</div>
+      <div class="value" id="totalExpense" style="color: var(--expense);">—</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">Net Balance</div>
+      <div class="value" id="netBalance">—</div>
+    </div>
+  </div>
+
+  <!-- Transaction List -->
+  <div class="section-header">
+    <h2>Transactions</h2>
+    <a href="transaction.html" class="btn">+ Add New</a>
+  </div>
+
+  <div id="transactionList">
+    <div class="loading-row" id="loadingMsg">
+      <span>Loading</span>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
